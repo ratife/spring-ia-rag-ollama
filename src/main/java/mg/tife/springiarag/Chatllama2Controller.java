@@ -19,8 +19,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api")
-public class ChatController {
+@RequestMapping("/api/llama2")
+public class Chatllama2Controller {
 
     private ChatClient chatClient;
     private VectorStore vectoreStore;
@@ -34,7 +34,7 @@ public class ChatController {
     @Value("classpath:/templates/prompt_maths.st")
     private Resource promptResourceMaths;
     
-    public ChatController(ChatClient.Builder builder,VectorStore vs){
+    public Chatllama2Controller(ChatClient.Builder builder,VectorStore vs){
         this.chatClient = builder.build();
         this.vectoreStore = vs;
     }
